@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script>L_PREFER_CANVAS=false; L_NO_TOUCH=false; L_DISABLE_3D=false;</script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.3.4/dist/leaflet.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.3.4/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+    <meta name="viewport" content="width=device-width,
+        initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <style>#map_bc754d45af754382afec683b1d6eff3e {
+        position: relative;
+        width: 100.0%;
+        height: 100.0%;
+        left: 0.0%;
+        top: 0.0%;
+        }
+    </style>
+</head>
+<body>    
+    
+                <div style="position: fixed; 
+                            bottom: 50px; left: 50px; width: 120px; height: 90px; 
+                            border:0px solid grey; z-index:9999; font-size:14px;
+                            ">; <br>
+                              &nbsp; Original trip &nbsp; <i class="fa fa-map-marker fa-2x" style="color:red"></i><br>
+                              &nbsp; Other trips &nbsp; <i class="fa fa-map-marker fa-2x" style="color:darkblue"></i>
+                </div>
+                
+    
+    <div class="folium-map" id="map_bc754d45af754382afec683b1d6eff3e" ></div>
+</body>
+<script>    
+    
+    
+        var bounds = null;
+    
+
+    var map_bc754d45af754382afec683b1d6eff3e = L.map(
+        'map_bc754d45af754382afec683b1d6eff3e', {
+        center: [39, -95],
+        zoom: 4.4,
+        maxBounds: bounds,
+        layers: [],
+        worldCopyJump: false,
+        crs: L.CRS.EPSG3857,
+        zoomControl: true,
+        });
+
+    
+    
+    var tile_layer_084c81b6bed743709a8ec5154b01746e = L.tileLayer(
+        'https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg',
+        {
+        "attribution": null,
+        "detectRetina": false,
+        "maxNativeZoom": 18,
+        "maxZoom": 18,
+        "minZoom": 0,
+        "noWrap": false,
+        "opacity": 1,
+        "subdomains": "abc",
+        "tms": false
+}).addTo(map_bc754d45af754382afec683b1d6eff3e);
+    
+            var feature_group_a6a525a3fb234e77857d305e74f16297 = L.featureGroup(
+                ).addTo(map_bc754d45af754382afec683b1d6eff3e);
+        
+    
+        var marker_dfe85128f3674ad18baeeea53a06553c = L.marker(
+            [39.8909, -87.2006],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(feature_group_a6a525a3fb234e77857d305e74f16297);
+        
+    
+
+                var icon_542a1c65ee5a47ada6296c44483adc26 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'darkblue',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_dfe85128f3674ad18baeeea53a06553c.setIcon(icon_542a1c65ee5a47ada6296c44483adc26);
+            
+    
+            var popup_bd5a8cda3dbd4bce8b334da6a557c7f9 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_08f59d5009b14c048d2f28be41194374 = $(`<div id="html_08f59d5009b14c048d2f28be41194374" style="width: 100.0%; height: 100.0%;"><a href="https://hugg-and-co.github.io/Turkey Run"target="_blank"> Turkey Run </a> <br> 0 total trips</div>`)[0];
+                popup_bd5a8cda3dbd4bce8b334da6a557c7f9.setContent(html_08f59d5009b14c048d2f28be41194374);
+            
+
+            marker_dfe85128f3674ad18baeeea53a06553c.bindPopup(popup_bd5a8cda3dbd4bce8b334da6a557c7f9)
+            ;
+
+            
+        
+    
+        var marker_cd747c6ac7c247e79ec207bad174c5c8 = L.marker(
+            [38.7336, -86.4168],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(feature_group_a6a525a3fb234e77857d305e74f16297);
+        
+    
+
+                var icon_2472a0bf9ef24791939663dee25c1507 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'darkblue',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_cd747c6ac7c247e79ec207bad174c5c8.setIcon(icon_2472a0bf9ef24791939663dee25c1507);
+            
+    
+            var popup_9c05e3e682ba4923838405891f482a49 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_1fa0a9ee1339468980a2b6445814d6a4 = $(`<div id="html_1fa0a9ee1339468980a2b6445814d6a4" style="width: 100.0%; height: 100.0%;"><a href="https://hugg-and-co.github.io/Spring Mill"target="_blank"> Spring Mill </a> <br> 0 total trips</div>`)[0];
+                popup_9c05e3e682ba4923838405891f482a49.setContent(html_1fa0a9ee1339468980a2b6445814d6a4);
+            
+
+            marker_cd747c6ac7c247e79ec207bad174c5c8.bindPopup(popup_9c05e3e682ba4923838405891f482a49)
+            ;
+
+            
+        
+    
+        var marker_5eea57852e2a4cc880eff4ec2e4400cf = L.marker(
+            [39.298, -86.724],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(feature_group_a6a525a3fb234e77857d305e74f16297);
+        
+    
+
+                var icon_185dd04e0cea4b7fa1bd5af4e4f0d894 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'darkblue',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_5eea57852e2a4cc880eff4ec2e4400cf.setIcon(icon_185dd04e0cea4b7fa1bd5af4e4f0d894);
+            
+    
+            var popup_59110381b26c4382965d215ba4efeef0 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_0a5baf286d2343bdb3112087aac321ec = $(`<div id="html_0a5baf286d2343bdb3112087aac321ec" style="width: 100.0%; height: 100.0%;"><a href="https://hugg-and-co.github.io/McCormicks Creek"target="_blank"> McCormicks Creek </a> <br> 0 total trips</div>`)[0];
+                popup_59110381b26c4382965d215ba4efeef0.setContent(html_0a5baf286d2343bdb3112087aac321ec);
+            
+
+            marker_5eea57852e2a4cc880eff4ec2e4400cf.bindPopup(popup_59110381b26c4382965d215ba4efeef0)
+            ;
+
+            
+        
+    
+        var marker_ffd705b5e66d4850b0653d8b65b8ff7b = L.marker(
+            [39.873597, -85.987114],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(feature_group_a6a525a3fb234e77857d305e74f16297);
+        
+    
+
+                var icon_f4d510db1a9d4e8f8c7cf8556a45163e = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'darkblue',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_ffd705b5e66d4850b0653d8b65b8ff7b.setIcon(icon_f4d510db1a9d4e8f8c7cf8556a45163e);
+            
+    
+            var popup_df980911146542c4948088dca14df115 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_80c9608895934ab1ad1357ad7cb046ef = $(`<div id="html_80c9608895934ab1ad1357ad7cb046ef" style="width: 100.0%; height: 100.0%;"><a href="https://hugg-and-co.github.io/Brown Vercamp"target="_blank"> Brown Vercamp </a> <br> 0 total trips</div>`)[0];
+                popup_df980911146542c4948088dca14df115.setContent(html_80c9608895934ab1ad1357ad7cb046ef);
+            
+
+            marker_ffd705b5e66d4850b0653d8b65b8ff7b.bindPopup(popup_df980911146542c4948088dca14df115)
+            ;
+
+            
+        
+    
+        var marker_e3bfed33427b4a8bb2174972870f239a = L.marker(
+            [38.050434, -87.580645],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(feature_group_a6a525a3fb234e77857d305e74f16297);
+        
+    
+
+                var icon_8a20c8356cf141cfb7022c38d7998044 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'darkblue',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_e3bfed33427b4a8bb2174972870f239a.setIcon(icon_8a20c8356cf141cfb7022c38d7998044);
+            
+    
+            var popup_bbac7d7b294948418aafa6848df70ccb = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_871c4406e2af4d8689977131123bdce5 = $(`<div id="html_871c4406e2af4d8689977131123bdce5" style="width: 100.0%; height: 100.0%;"><a href="https://hugg-and-co.github.io/Stephens Evinger"target="_blank"> Stephens Evinger </a> <br> 0 total trips</div>`)[0];
+                popup_bbac7d7b294948418aafa6848df70ccb.setContent(html_871c4406e2af4d8689977131123bdce5);
+            
+
+            marker_e3bfed33427b4a8bb2174972870f239a.bindPopup(popup_bbac7d7b294948418aafa6848df70ccb)
+            ;
+
+            
+        
+    
+        var marker_d7e305401a884565b2ca9743309aab76 = L.marker(
+            [37.966, -87.533749],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(feature_group_a6a525a3fb234e77857d305e74f16297);
+        
+    
+
+                var icon_08d79fb870f04331b0aeccd67247096e = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'darkblue',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_d7e305401a884565b2ca9743309aab76.setIcon(icon_08d79fb870f04331b0aeccd67247096e);
+            
+    
+            var popup_01b82137e5394f079cf7ca5b2f43b9f3 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_edd39bef3f0a4f7395f8bee5de2a92e7 = $(`<div id="html_edd39bef3f0a4f7395f8bee5de2a92e7" style="width: 100.0%; height: 100.0%;"><a href="https://hugg-and-co.github.io/Stephens Fischer"target="_blank"> Stephens Fischer </a> <br> 0 total trips</div>`)[0];
+                popup_01b82137e5394f079cf7ca5b2f43b9f3.setContent(html_edd39bef3f0a4f7395f8bee5de2a92e7);
+            
+
+            marker_d7e305401a884565b2ca9743309aab76.bindPopup(popup_01b82137e5394f079cf7ca5b2f43b9f3)
+            ;
+
+            
+        
+    
+        var marker_62ed25b18d574299812b4eae8fcf2fa7 = L.marker(
+            [38.0903, -87.9456],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(feature_group_a6a525a3fb234e77857d305e74f16297);
+        
+    
+
+                var icon_d3378240a8604ba29ec009f8cbc258ff = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'darkblue',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_62ed25b18d574299812b4eae8fcf2fa7.setIcon(icon_d3378240a8604ba29ec009f8cbc258ff);
+            
+    
+            var popup_c03c449ba24844a9954623be43933abe = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_47ee7dcfde224752ad7f52382fb2453c = $(`<div id="html_47ee7dcfde224752ad7f52382fb2453c" style="width: 100.0%; height: 100.0%;"><a href="https://hugg-and-co.github.io/Harmonie"target="_blank"> Harmonie </a> <br> 0 total trips</div>`)[0];
+                popup_c03c449ba24844a9954623be43933abe.setContent(html_47ee7dcfde224752ad7f52382fb2453c);
+            
+
+            marker_62ed25b18d574299812b4eae8fcf2fa7.bindPopup(popup_c03c449ba24844a9954623be43933abe)
+            ;
+
+            
+        
+    
+        var marker_eac0fe5bf59c4cc680dacada35ff6d4d = L.marker(
+            [38.1114, -86.9981],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(feature_group_a6a525a3fb234e77857d305e74f16297);
+        
+    
+
+                var icon_6359cf3e658841c0afaca3ee9e71bc3d = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'darkblue',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_eac0fe5bf59c4cc680dacada35ff6d4d.setIcon(icon_6359cf3e658841c0afaca3ee9e71bc3d);
+            
+    
+            var popup_4cdee194906340beb2845e6ef5a89c2f = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_e4762634e3d74ceb9450cc86dc954c77 = $(`<div id="html_e4762634e3d74ceb9450cc86dc954c77" style="width: 100.0%; height: 100.0%;"><a href="https://hugg-and-co.github.io/Lincoln"target="_blank"> Lincoln </a> <br> 0 total trips</div>`)[0];
+                popup_4cdee194906340beb2845e6ef5a89c2f.setContent(html_e4762634e3d74ceb9450cc86dc954c77);
+            
+
+            marker_eac0fe5bf59c4cc680dacada35ff6d4d.bindPopup(popup_4cdee194906340beb2845e6ef5a89c2f)
+            ;
+
+            
+        
+    
+        var marker_c7a4ab22a5554d7cb89ba1148c40f28b = L.marker(
+            [38.7551, -85.4212],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(feature_group_a6a525a3fb234e77857d305e74f16297);
+        
+    
+
+                var icon_8ff86c9c64384384a6f28897780b49b1 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'darkblue',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_c7a4ab22a5554d7cb89ba1148c40f28b.setIcon(icon_8ff86c9c64384384a6f28897780b49b1);
+            
+    
+            var popup_c854d61ec4af4efdbbaea509ad367074 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_41734c134479495ea3343fcf10020c12 = $(`<div id="html_41734c134479495ea3343fcf10020c12" style="width: 100.0%; height: 100.0%;"><a href="https://hugg-and-co.github.io/Cliffty Falls"target="_blank"> Cliffty Falls </a> <br> 0 total trips</div>`)[0];
+                popup_c854d61ec4af4efdbbaea509ad367074.setContent(html_41734c134479495ea3343fcf10020c12);
+            
+
+            marker_c7a4ab22a5554d7cb89ba1148c40f28b.bindPopup(popup_c854d61ec4af4efdbbaea509ad367074)
+            ;
+
+            
+        
+    
+        var marker_ead338eb21c6436abb7bead52e05f6f9 = L.marker(
+            [39.1702, -87.2415],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(feature_group_a6a525a3fb234e77857d305e74f16297);
+        
+    
+
+                var icon_1ae8c13da16843fe96f75466f278d3b3 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'darkblue',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_ead338eb21c6436abb7bead52e05f6f9.setIcon(icon_1ae8c13da16843fe96f75466f278d3b3);
+            
+    
+            var popup_c7eeeb6cf3d644d9bc261e569ee6da24 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_2bd0cadc589d42ac9560568a908571e8 = $(`<div id="html_2bd0cadc589d42ac9560568a908571e8" style="width: 100.0%; height: 100.0%;"><a href="https://hugg-and-co.github.io/Shakamak"target="_blank"> Shakamak </a> <br> 0 total trips</div>`)[0];
+                popup_c7eeeb6cf3d644d9bc261e569ee6da24.setContent(html_2bd0cadc589d42ac9560568a908571e8);
+            
+
+            marker_ead338eb21c6436abb7bead52e05f6f9.bindPopup(popup_c7eeeb6cf3d644d9bc261e569ee6da24)
+            ;
+
+            
+        
+    
+        var marker_2455a131f7af474faea9591c507b81a9 = L.marker(
+            [36.2429, -121.7767],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(feature_group_a6a525a3fb234e77857d305e74f16297);
+        
+    
+
+                var icon_2c87f033633b4289ad96d2544c7ad541 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'darkblue',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_2455a131f7af474faea9591c507b81a9.setIcon(icon_2c87f033633b4289ad96d2544c7ad541);
+            
+    
+            var popup_f4feb282be6e41feb92be4b749d71725 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_71de16812f52446ba789ae8bd82b0044 = $(`<div id="html_71de16812f52446ba789ae8bd82b0044" style="width: 100.0%; height: 100.0%;"><a href="https://hugg-and-co.github.io/Pfeiffer Big Sur"target="_blank"> Pfeiffer Big Sur </a> <br> 1 total trips</div>`)[0];
+                popup_f4feb282be6e41feb92be4b749d71725.setContent(html_71de16812f52446ba789ae8bd82b0044);
+            
+
+            marker_2455a131f7af474faea9591c507b81a9.bindPopup(popup_f4feb282be6e41feb92be4b749d71725)
+            ;
+
+            
+        
+    
+        var marker_d0d90724bcfe4293804eb1d99cd6e023 = L.marker(
+            [39.0451, -120.1408],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(feature_group_a6a525a3fb234e77857d305e74f16297);
+        
+    
+
+                var icon_b014648410f144a6b51503b03ec5f117 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'darkblue',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_d0d90724bcfe4293804eb1d99cd6e023.setIcon(icon_b014648410f144a6b51503b03ec5f117);
+            
+    
+            var popup_2d3af39f27484a6bb5f4fbca53341719 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_661553080aba4cb19c77908e89f3b836 = $(`<div id="html_661553080aba4cb19c77908e89f3b836" style="width: 100.0%; height: 100.0%;"><a href="https://hugg-and-co.github.io/Sugar Pine Point"target="_blank"> Sugar Pine Point </a> <br> 1 total trips</div>`)[0];
+                popup_2d3af39f27484a6bb5f4fbca53341719.setContent(html_661553080aba4cb19c77908e89f3b836);
+            
+
+            marker_d0d90724bcfe4293804eb1d99cd6e023.bindPopup(popup_2d3af39f27484a6bb5f4fbca53341719)
+            ;
+
+            
+        
+    
+        var marker_b99d0d3d8d6f4f8bba75d306f5981b05 = L.marker(
+            [43.8791, -103.4591],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(feature_group_a6a525a3fb234e77857d305e74f16297);
+        
+    
+
+                var icon_b49eb86641e941c1a6c3149f577b484f = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_b99d0d3d8d6f4f8bba75d306f5981b05.setIcon(icon_b49eb86641e941c1a6c3149f577b484f);
+            
+    
+            var popup_66d2d62bec904c579af0f50bcb5e9599 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_f8547e167d8e404cad7d90ad5c0a04c1 = $(`<div id="html_f8547e167d8e404cad7d90ad5c0a04c1" style="width: 100.0%; height: 100.0%;"><a href="https://hugg-and-co.github.io/original-trip"target="_blank"> Mount Rushmore </a></div>`)[0];
+                popup_66d2d62bec904c579af0f50bcb5e9599.setContent(html_f8547e167d8e404cad7d90ad5c0a04c1);
+            
+
+            marker_b99d0d3d8d6f4f8bba75d306f5981b05.bindPopup(popup_66d2d62bec904c579af0f50bcb5e9599)
+            ;
+
+            
+        
+    
+        var marker_b238d3eb9ab54e53bd242496dc8f7649 = L.marker(
+            [43.8554, -102.3397],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(feature_group_a6a525a3fb234e77857d305e74f16297);
+        
+    
+
+                var icon_3711d5e36b954648aecd91044b4820a3 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_b238d3eb9ab54e53bd242496dc8f7649.setIcon(icon_3711d5e36b954648aecd91044b4820a3);
+            
+    
+            var popup_4f99e020c3434bab9455d1534056beee = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_27c7c2bb7e6345d9b21b4ad7bfc35eaa = $(`<div id="html_27c7c2bb7e6345d9b21b4ad7bfc35eaa" style="width: 100.0%; height: 100.0%;"><a href="https://hugg-and-co.github.io/original-trip"target="_blank"> Badlands NP </a></div>`)[0];
+                popup_4f99e020c3434bab9455d1534056beee.setContent(html_27c7c2bb7e6345d9b21b4ad7bfc35eaa);
+            
+
+            marker_b238d3eb9ab54e53bd242496dc8f7649.bindPopup(popup_4f99e020c3434bab9455d1534056beee)
+            ;
+
+            
+        
+    
+        var marker_8c1c0287ad2e427fb6443da87c4e24b4 = L.marker(
+            [44.428, -110.5885],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(feature_group_a6a525a3fb234e77857d305e74f16297);
+        
+    
+
+                var icon_fb752748b6374286942cb583a764f2fc = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_8c1c0287ad2e427fb6443da87c4e24b4.setIcon(icon_fb752748b6374286942cb583a764f2fc);
+            
+    
+            var popup_e695542ffc7546298d0fa11ab847138a = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_98d05cd7275b4b66895b4915cd725791 = $(`<div id="html_98d05cd7275b4b66895b4915cd725791" style="width: 100.0%; height: 100.0%;"><a href="https://hugg-and-co.github.io/original-trip"target="_blank"> Yellowstone NP </a></div>`)[0];
+                popup_e695542ffc7546298d0fa11ab847138a.setContent(html_98d05cd7275b4b66895b4915cd725791);
+            
+
+            marker_8c1c0287ad2e427fb6443da87c4e24b4.bindPopup(popup_e695542ffc7546298d0fa11ab847138a)
+            ;
+
+            
+        
+    
+        var marker_557e479ce19549739f37628d98a6174c = L.marker(
+            [48.7596, -113.787],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(feature_group_a6a525a3fb234e77857d305e74f16297);
+        
+    
+
+                var icon_2fd7ec1fc6574c419b4714c0c7ae2723 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_557e479ce19549739f37628d98a6174c.setIcon(icon_2fd7ec1fc6574c419b4714c0c7ae2723);
+            
+    
+            var popup_bb16b15903114ad88a756a61c4152adb = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_6994ae3b79944c6099f91164d43d7b12 = $(`<div id="html_6994ae3b79944c6099f91164d43d7b12" style="width: 100.0%; height: 100.0%;"><a href="https://hugg-and-co.github.io/original-trip"target="_blank"> Glacier NP </a></div>`)[0];
+                popup_bb16b15903114ad88a756a61c4152adb.setContent(html_6994ae3b79944c6099f91164d43d7b12);
+            
+
+            marker_557e479ce19549739f37628d98a6174c.bindPopup(popup_bb16b15903114ad88a756a61c4152adb)
+            ;
+
+            
+        
+    
+        var marker_08b1453a39fc4f4393d45a3440e8b035 = L.marker(
+            [51.4968, -115.9281],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(feature_group_a6a525a3fb234e77857d305e74f16297);
+        
+    
+
+                var icon_30a3da84816e4585a7344080bc29d242 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_08b1453a39fc4f4393d45a3440e8b035.setIcon(icon_30a3da84816e4585a7344080bc29d242);
+            
+    
+            var popup_c697162428a04bb5987c2f2b7629943a = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_c2c6216917754a129a362ee790a3076a = $(`<div id="html_c2c6216917754a129a362ee790a3076a" style="width: 100.0%; height: 100.0%;"><a href="https://hugg-and-co.github.io/original-trip"target="_blank"> Banff NP </a></div>`)[0];
+                popup_c697162428a04bb5987c2f2b7629943a.setContent(html_c2c6216917754a129a362ee790a3076a);
+            
+
+            marker_08b1453a39fc4f4393d45a3440e8b035.bindPopup(popup_c697162428a04bb5987c2f2b7629943a)
+            ;
+
+            
+        
+    
+        var marker_aabd58df36954df8b0f7a2fe74b6fde6 = L.marker(
+            [52.8734, -117.9543],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(feature_group_a6a525a3fb234e77857d305e74f16297);
+        
+    
+
+                var icon_88942aa3db2d4d69846892c474f3ccb1 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_aabd58df36954df8b0f7a2fe74b6fde6.setIcon(icon_88942aa3db2d4d69846892c474f3ccb1);
+            
+    
+            var popup_7baf66b7b5ed482daba9cb19a16f3bf9 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_926033dff5264a7982f645c84744e094 = $(`<div id="html_926033dff5264a7982f645c84744e094" style="width: 100.0%; height: 100.0%;"><a href="https://hugg-and-co.github.io/original-trip"target="_blank"> Jasper NP </a></div>`)[0];
+                popup_7baf66b7b5ed482daba9cb19a16f3bf9.setContent(html_926033dff5264a7982f645c84744e094);
+            
+
+            marker_aabd58df36954df8b0f7a2fe74b6fde6.bindPopup(popup_7baf66b7b5ed482daba9cb19a16f3bf9)
+            ;
+
+            
+        
+    
+        var marker_c8ea29b1237148e9b7b7e9cbfb2d3a1a = L.marker(
+            [40.3428, -105.6836],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(feature_group_a6a525a3fb234e77857d305e74f16297);
+        
+    
+
+                var icon_4f707478668346c191f5d573c94b0681 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_c8ea29b1237148e9b7b7e9cbfb2d3a1a.setIcon(icon_4f707478668346c191f5d573c94b0681);
+            
+    
+            var popup_c49642a4a9fc4a889dd4dafbd8dc4347 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_f40b39ceae854537ac35736e080e624f = $(`<div id="html_f40b39ceae854537ac35736e080e624f" style="width: 100.0%; height: 100.0%;"><a href="https://hugg-and-co.github.io/original-trip"target="_blank"> Rocky Mountain NP </a></div>`)[0];
+                popup_c49642a4a9fc4a889dd4dafbd8dc4347.setContent(html_f40b39ceae854537ac35736e080e624f);
+            
+
+            marker_c8ea29b1237148e9b7b7e9cbfb2d3a1a.bindPopup(popup_c49642a4a9fc4a889dd4dafbd8dc4347)
+            ;
+
+            
+        
+    
+        var marker_737cf56e01904aeaa2a94109ab281292 = L.marker(
+            [43.9939, -103.7718],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(feature_group_a6a525a3fb234e77857d305e74f16297);
+        
+    
+
+                var icon_802f1f9783de4b0d99ab7573ed564d2f = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_737cf56e01904aeaa2a94109ab281292.setIcon(icon_802f1f9783de4b0d99ab7573ed564d2f);
+            
+    
+            var popup_872e2d76fab94cca9265989adb5d35ec = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_439cdc4371de44519599ba5ce4c18dce = $(`<div id="html_439cdc4371de44519599ba5ce4c18dce" style="width: 100.0%; height: 100.0%;"><a href="https://hugg-and-co.github.io/original-trip"target="_blank"> Black Hills  </a></div>`)[0];
+                popup_872e2d76fab94cca9265989adb5d35ec.setContent(html_439cdc4371de44519599ba5ce4c18dce);
+            
+
+            marker_737cf56e01904aeaa2a94109ab281292.bindPopup(popup_872e2d76fab94cca9265989adb5d35ec)
+            ;
+
+            
+        
+    
+        var marker_9ce7f3d546c2480fad231af4342c57c4 = L.marker(
+            [48.4841, -92.8271],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(feature_group_a6a525a3fb234e77857d305e74f16297);
+        
+    
+
+                var icon_798447cc05594f379c17a5f46287acca = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'darkblue',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_9ce7f3d546c2480fad231af4342c57c4.setIcon(icon_798447cc05594f379c17a5f46287acca);
+            
+    
+            var popup_9a15b62b85ad4fe7a073fa59d189b27e = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_8057833b07674a149048881382529ed4 = $(`<div id="html_8057833b07674a149048881382529ed4" style="width: 100.0%; height: 100.0%;"><a href="https://hugg-and-co.github.io/Voyageurs NP"target="_blank"> Voyageurs NP </a> <br> 1 total trips</div>`)[0];
+                popup_9a15b62b85ad4fe7a073fa59d189b27e.setContent(html_8057833b07674a149048881382529ed4);
+            
+
+            marker_9ce7f3d546c2480fad231af4342c57c4.bindPopup(popup_9a15b62b85ad4fe7a073fa59d189b27e)
+            ;
+
+            
+        
+    
+        var marker_f37e849cdd8346aeb30ac7423a0a84ae = L.marker(
+            [47.9959, -88.9093],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(feature_group_a6a525a3fb234e77857d305e74f16297);
+        
+    
+
+                var icon_63d3b16ceed14f85ab18454635647d8a = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'darkblue',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_f37e849cdd8346aeb30ac7423a0a84ae.setIcon(icon_63d3b16ceed14f85ab18454635647d8a);
+            
+    
+            var popup_5ba4c9176c5a41a1845d8db11cde54d2 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_0f2bf58567a34f7799233ab4ccafc5dd = $(`<div id="html_0f2bf58567a34f7799233ab4ccafc5dd" style="width: 100.0%; height: 100.0%;"><a href="https://hugg-and-co.github.io/Isle Royale NP"target="_blank"> Isle Royale NP </a> <br> 1 total trips</div>`)[0];
+                popup_5ba4c9176c5a41a1845d8db11cde54d2.setContent(html_0f2bf58567a34f7799233ab4ccafc5dd);
+            
+
+            marker_f37e849cdd8346aeb30ac7423a0a84ae.bindPopup(popup_5ba4c9176c5a41a1845d8db11cde54d2)
+            ;
+
+            
+        
+</script>
