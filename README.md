@@ -1,1 +1,1 @@
-A place to tell the stories of HUGG.
+Photos of HUGG.
